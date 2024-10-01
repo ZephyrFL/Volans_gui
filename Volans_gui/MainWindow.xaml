@@ -5,16 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Volans_gui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="190*"/>
-            <RowDefinition Height="27*"/>
-        </Grid.RowDefinitions>
-        <TextBox Name="inputTextBox" Margin="10,16,175,15" KeyDown="inputTextBox_KeyDown" Grid.Row="1"/>
-        <Button Content="Send" Name="button2" Margin="750,16,7,15" Click="button2_Click" Grid.Row="1"/>
-        <TextBlock Name="richTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" Height="373" Width="780" TextWrapping="Wrap" Text="Messages:"/>
-        <Button Content="Send" x:Name="button1" Margin="648,16,70,15" Click="button1_Click" Grid.Row="1"/>
+        Title="UPD Chat" Height="450" Width="800">
+    <Grid Background="#FFEFEFEF">
+
+
+
+        <TextBox Name="inputTextBox" Margin="10,395,173,10" KeyDown="inputTextBox_KeyDown">
+            <TextBox.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="10" Opacity="0.5" />
+            </TextBox.BitmapEffect>
+        </TextBox>
+
+        <Button Content="Send" Name="button2" Margin="739,395,7,10" Click="button2_Click" Background="#FFF2F2F2" BorderBrush="#FFF2F2F2" Foreground="#FF2FBCA4">
+            <Button.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="300" Softness="1" ShadowDepth="10" Opacity="0.5" />
+            </Button.BitmapEffect>
+        </Button>
+
+        <TextBlock Name="richTextBlock" TextWrapping="Wrap" Text="Messages:" Margin="10,0,10,0" Background="White" Height="385" VerticalAlignment="Top"/>
+
+        <Button Content="Send" x:Name="button1" Margin="632,395,66,10" Click="button1_Click" RenderTransformOrigin="1.225,0.311" Background="#FFF2F2F2" BorderBrush="#FFF2F2F2" Foreground="Black">
+            <Button.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="300" Softness="1" ShadowDepth="10" Opacity="0.5" />
+            </Button.BitmapEffect>
+        </Button>
 
     </Grid>
 </Window>
