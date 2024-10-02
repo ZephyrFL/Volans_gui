@@ -5,26 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Volans_gui"
         mc:Ignorable="d"
-        Title="UPD Chat" Height="450" Width="800">
-    <Grid Background="#FFEFEFEF">
+        Title="UPD Chat" Height="700" Width="450">
+    <Grid RenderTransformOrigin="0.53,0.503" Background="#FFF1E9E9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="206*"></RowDefinition>
+            <RowDefinition Height="15*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
 
-
-
-        <TextBox Name="inputTextBox" Margin="10,395,173,10" KeyDown="inputTextBox_KeyDown">
+        <TextBox Name="inputTextBox" Margin="10,10,0,10" KeyDown="inputTextBox_KeyDown" Grid.Row="1">
             <TextBox.BitmapEffect>
                 <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="10" Opacity="0.5" />
             </TextBox.BitmapEffect>
         </TextBox>
 
-        <Button Content="Send" Name="button2" Margin="739,395,7,10" Click="button2_Click" Background="#FFF2F2F2" BorderBrush="#FFF2F2F2" Foreground="#FF2FBCA4">
+        <Button Content="Send" Name="button1" Margin="10,10,0,10" Click="button1_Click" Background="#FFF2F2F2" BorderBrush="#FFF2F2F2" Foreground="#FF2FBCA4" Grid.Row="1" Grid.Column="1">
             <Button.BitmapEffect>
                 <DropShadowBitmapEffect Color="Black" Direction="300" Softness="1" ShadowDepth="10" Opacity="0.5" />
             </Button.BitmapEffect>
         </Button>
 
-        <TextBlock Name="richTextBlock" TextWrapping="Wrap" Text="Messages:" Margin="10,0,10,0" Background="White" Height="385" VerticalAlignment="Top"/>
+        <TextBlock Name="richTextBlock" TextWrapping="Wrap" Text="Messages:" Margin="10,10,10,1" Background="White" Grid.ColumnSpan="3"/>
 
-        <Button Content="Send" x:Name="button1" Margin="632,395,66,10" Click="button1_Click" RenderTransformOrigin="1.225,0.311" Background="#FFF2F2F2" BorderBrush="#FFF2F2F2" Foreground="Black">
+        <Button Content="Send" x:Name="button2" Margin="10,10,10,10" Click="button2_Click" RenderTransformOrigin="1.225,0.311" Background="#FFF2F2F2" BorderBrush="#FFF2F2F2" Foreground="Black" Grid.Column="2" Grid.Row="1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
             <Button.BitmapEffect>
                 <DropShadowBitmapEffect Color="Black" Direction="300" Softness="1" ShadowDepth="10" Opacity="0.5" />
             </Button.BitmapEffect>
