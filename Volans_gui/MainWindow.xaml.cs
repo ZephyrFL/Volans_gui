@@ -40,6 +40,10 @@ namespace Volans_gui
                 {
                     Task receiveTask = Task.Run(() => ReceiveMessagesAsync(port, selectedIPAddress));
                 }
+                else if (selectedIPAddress == null)
+                {
+                    this.Close();
+                }
             }
 
             private async Task ReceiveMessagesAsync(int port, IPAddress localIPAddress)
@@ -148,19 +152,26 @@ namespace Volans_gui
                 return null;
             }
 
-            private async void button2_Click(object sender, RoutedEventArgs e)
+        private async void button2_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            try
             {
-                try
-                {
-                    SendReceive FileManager = new SendReceive();
-                    await FileManager.Main();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Ошибка отправки: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                // Создаем экземпляр окна прогресса
+                FileManager progressWindow = new FileManager();
+                progressWindow.Show(); // Или используйте ShowDialog() для модального окна
+            }
+            catch (Exception ex)
+            {
+
+                // Показ ошибки
+                MessageBox.Show($"Ошибка отправки: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-
-        }
     }
+
+
+}
+    

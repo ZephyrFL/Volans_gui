@@ -1,0 +1,26 @@
+﻿<Window x:Class="Volans_gui.FileManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Volans_gui"
+        mc:Ignorable="d"
+        Title="FileManager" Height="212" Width="555">
+    <Grid Margin="0,0,0,10">
+        <TextBlock Text="IP-адрес:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,32,0,0"/>
+        <TextBox Name="IpAddressTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,32,0,0" Width="200"/>
+
+        <TextBlock Text="Порт:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,62,0,0"/>
+        <TextBox Name="PortTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,62,0,0" Width="200" TextChanged="PortTextBox_TextChanged_1" Text="12180"/>
+
+        <TextBlock Text="Путь к файлу:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,92,0,0"/>
+        <TextBox Name="FilePathTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,92,0,0" Width="300"/>
+
+        <Button Content="Выбрать файл" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="433,92,0,0" Width="100" Click="SelectFileButton_Click" RenderTransformOrigin="0.865,0.692"/>
+
+        <Button Content="Отправить файл" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="433,132,0,0" Width="100" Click="SendFileButton_Click"/>
+        <Button Content="Принять файл" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,132,0,0" Width="100" Click="ReceiveFileButton_Click"/>
+
+        <TextBlock Name="StatusTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Width="542" Background="#FFE2E2E2"/>
+    </Grid>
+</Window>
